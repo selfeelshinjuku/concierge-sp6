@@ -1,0 +1,534 @@
+{
+  "version": "4.2.0",
+  "options": [
+    {
+      "id": "sixpad_op15_m",
+      "name": "SIXPAD op.15",
+      "description": "メディカルグレードのSIXPADで、ウエストや大腿部を寝たままトレーニング。施術効果の持続も期待できます。",
+      "badges": [
+        "NEW",
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 70,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 15,
+      "price": 3500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_boost",
+        "slim_intensive_m",
+        "relax_set_m",
+        "relax_chiropractic_m",
+        "mens_max"
+      ],
+      "symptomWeights": {
+        "diet_body": 14,
+        "vitality_recovery": 10,
+        "refresh": 3
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "引き締め感を少し足したい時に選びやすい追加オプションです。"
+    },
+    {
+      "id": "sixpad_op30_m",
+      "name": "SIXPAD op.30",
+      "description": "15分よりお得に集中トレーニング。骨盤と体幹をアウター＆インナーマッスルへ効果的に刺激します。",
+      "badges": [
+        "NEW"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 74,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 30,
+      "price": 6000,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_boost",
+        "slim_intensive_m",
+        "relax_set_m",
+        "relax_chiropractic_m",
+        "mens_max"
+      ],
+      "symptomWeights": {
+        "diet_body": 18,
+        "vitality_recovery": 11,
+        "refresh": 4
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "痩身・引き締めをしっかり入れたい方向けの上位SIXPADオプションです。"
+    },
+    {
+      "id": "carbonic_head_m",
+      "name": "炭酸ヘッドセラピー",
+      "description": "パチパチ弾ける炭酸ジェットで極上のヘッドケア。ストレスや不眠、頭痛や眼精疲労にもおすすめ。",
+      "badges": [
+        "リピNo.1"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 92,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 1500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "slim_intensive_m",
+        "sixpad_course_30_m",
+        "relax_set_m",
+        "relax_chiropractic_m"
+      ],
+      "symptomWeights": {
+        "stress_relief": 16,
+        "better_sleep": 16,
+        "eye_strain": 16,
+        "refresh": 10
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "頭・目の疲れ、不眠、ストレス対策として特に相性が高いヘッドケアです。"
+    },
+    {
+      "id": "special_head_m",
+      "name": "スペシャルヘッドセラピー",
+      "description": "スカルプ美容液を電気ブラシで頭皮ケアしながら浸透させる頭皮集中オプション。",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 96,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 3500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_boost",
+        "slim_intensive_m",
+        "sixpad_course_30_m",
+        "relax_set_m",
+        "relax_chiropractic_m",
+        "mens_max",
+        "facial_basic_m",
+        "facial_special_m",
+        "facial_royal_m"
+      ],
+      "symptomWeights": {
+        "stress_relief": 18,
+        "better_sleep": 18,
+        "eye_strain": 18,
+        "refresh": 10
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "頭皮までしっかり整えたい方に向く、満足度の高い上位ヘッドケアです。"
+    },
+    {
+      "id": "petit_facial_m",
+      "name": "プチフェイシャル",
+      "description": "クレンジング洗顔・毛穴ケア・クリーム仕上げの最小限フェイシャル。ヘッドセラピー系とのセットもおすすめ。",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 82,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 3500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "slim_intensive_m",
+        "relax_set_m"
+      ],
+      "symptomWeights": {
+        "rough_skin": 14,
+        "beauty_care": 8,
+        "eye_strain": 4
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "肌荒れや印象アップを少し足したい時に組み合わせやすいフェイス追加です。"
+    },
+    {
+      "id": "mens_energy",
+      "name": "メンズエナジー",
+      "description": "鼠蹊部のリンパ節と陰嚢周辺などをケアし、代謝と血流を促進する人気オプション。",
+      "badges": [
+        "人気No.1"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 95,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 1500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_max"
+      ],
+      "symptomWeights": {
+        "vitality_recovery": 18,
+        "stress_relief": 8,
+        "refresh": 6
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "活力ケアをさらに高めたい方に、コースとの相乗効果を狙いやすい追加です。"
+    },
+    {
+      "id": "back_scrub",
+      "name": "背中スクラブ",
+      "description": "自分では洗いにくい背中をスクラブし、肌荒れやかゆみ対策にもつながるオイル系と相性の良い追加ケア。",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 72,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 1500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_max"
+      ],
+      "symptomWeights": {
+        "rough_skin": 12
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "背中のざらつきや見えない肌悩みが気になる時の定番追加です。"
+    },
+    {
+      "id": "full_body_scrub",
+      "name": "全身スクラブ",
+      "description": "保湿効果もあるスクラブで全身をケア。乾燥時期や汗ばむ季節におすすめです。",
+      "badges": [
+        "NEW"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 78,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 5000,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_max"
+      ],
+      "symptomWeights": {
+        "rough_skin": 15,
+        "beauty_care": 8,
+        "refresh": 4
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "全身の肌触りや清潔感を上げたい時に満足度が高い追加です。"
+    },
+    {
+      "id": "back_pack",
+      "name": "背中パック",
+      "description": "背中ニキビや乾燥が気になる時に、スクラブとあわせるとより効果的な追加パック。",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 76,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 3500,
+      "compatibleCourseIds": [
+        "mens_aroma",
+        "mens_recovery",
+        "mens_max"
+      ],
+      "symptomWeights": {
+        "rough_skin": 13,
+        "beauty_care": 8
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "背中ニキビや乾燥が気になる時に相性のよい追加ケアです。"
+    },
+    {
+      "id": "sixpad_op15_f",
+      "name": "SIXPAD op.15",
+      "description": "メディカルグレードのSIXPADで、ウエストや大腿部を寝たままトレーニング。施術効果の持続も期待できます。",
+      "badges": [
+        "NEW",
+        "おすすめ"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 72,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 15,
+      "price": 3500,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "relax_chiropractic_f",
+        "sixpad_course_30_f",
+        "cinderella_relax",
+        "little_cinderella",
+        "mdna_cinderella"
+      ],
+      "symptomWeights": {
+        "diet_body": 14,
+        "postpartum_alignment": 8,
+        "refresh": 3
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "引き締め感を少し足したい時に選びやすい追加オプションです。"
+    },
+    {
+      "id": "sixpad_op30_f",
+      "name": "SIXPAD op.30",
+      "description": "15分よりお得に集中トレーニング。骨盤と体幹をアウター＆インナーマッスルへ効果的に刺激します。",
+      "badges": [
+        "NEW"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 76,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 30,
+      "price": 6000,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "relax_chiropractic_f",
+        "sixpad_course_30_f",
+        "cinderella_relax",
+        "little_cinderella",
+        "mdna_cinderella"
+      ],
+      "symptomWeights": {
+        "diet_body": 18,
+        "postpartum_alignment": 10,
+        "refresh": 4
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "痩身・引き締めをしっかり入れたい方向けの上位SIXPADオプションです。"
+    },
+    {
+      "id": "carbonic_head_f",
+      "name": "炭酸ヘッドセラピー",
+      "description": "パチパチ弾ける炭酸ジェットで極上のヘッドケア。ストレスや不眠、頭痛や眼精疲労にもおすすめ。",
+      "badges": [
+        "リピNo.1"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 92,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 1500,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "relax_chiropractic_f",
+        "sixpad_course_30_f",
+        "cinderella_relax",
+        "little_cinderella",
+        "mdna_cinderella",
+        "cinderella_facial",
+        "mdna_facial"
+      ],
+      "symptomWeights": {
+        "stress_relief": 16,
+        "better_sleep": 16,
+        "eye_strain": 16,
+        "refresh": 10
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "頭・目の疲れ、不眠、ストレス対策として特に相性が高いヘッドケアです。"
+    },
+    {
+      "id": "special_head_f",
+      "name": "スペシャルヘッドセラピー",
+      "description": "美髪育毛効果のあるスカルプ美容液を電気ブラシで頭皮ケアしながら浸透させます。",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 96,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 3500,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "relax_chiropractic_f",
+        "sixpad_course_30_f",
+        "cinderella_relax",
+        "little_cinderella",
+        "mdna_cinderella",
+        "cinderella_facial",
+        "mdna_facial"
+      ],
+      "symptomWeights": {
+        "stress_relief": 18,
+        "better_sleep": 18,
+        "eye_strain": 18,
+        "refresh": 10
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "頭皮までしっかり整えたい方に向く、満足度の高い上位ヘッドケアです。"
+    },
+    {
+      "id": "hot_reflexology",
+      "name": "ホットリフレクソロジー",
+      "description": "ホットジェルを追加して血流を促進し、脚のむくみや冷えを芯から温める人気オプション。",
+      "badges": [
+        "人気No.1"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 90,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 1500,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "reflexology_f",
+        "cinderella_relax",
+        "little_cinderella",
+        "mdna_cinderella"
+      ],
+      "symptomWeights": {
+        "leg_swelling": 17,
+        "cold_poor_circulation": 17,
+        "full_body_fatigue": 6
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "脚の冷えやむくみをしっかり流したい時に追加価値の高いケアです。"
+    },
+    {
+      "id": "ultrasonic_leg_care",
+      "name": "超音波レッグケア",
+      "description": "超音波でふくらはぎのハリやむくみの原因になる疲労物質へアプローチし、流れを促進します。",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 88,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 3000,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "reflexology_f",
+        "cinderella_relax",
+        "mdna_cinderella"
+      ],
+      "symptomWeights": {
+        "leg_swelling": 18,
+        "diet_body": 12,
+        "cold_poor_circulation": 10
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "脚のむくみや重さを集中的にケアしたい時に向く追加です。"
+    },
+    {
+      "id": "reiki_healing",
+      "name": "レイキヒーリング",
+      "description": "エネルギーや魂レベルの癒しを意識した、静かに整えたい方向けの追加オプション。",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 94,
+      "durationMinutes": 0,
+      "withinCourseMinutes": 0,
+      "price": 3000,
+      "compatibleCourseIds": [
+        "relax_set_f",
+        "relax_chiropractic_f",
+        "reflexology_f",
+        "cinderella_relax",
+        "little_cinderella",
+        "mdna_cinderella"
+      ],
+      "symptomWeights": {
+        "stress_relief": 17,
+        "better_sleep": 17,
+        "refresh": 10
+      },
+      "segmentWeights": {},
+      "notes": "コース時間内で対応",
+      "active": true,
+      "conciergePitch": "気持ちを落ち着けて、深く休みたい時に相性が高いリラクゼーション追加です。"
+    }
+  ]
+}

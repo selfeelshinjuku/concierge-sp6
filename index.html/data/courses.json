@@ -1,0 +1,1524 @@
+{
+  "version": "4.2.0",
+  "courses": [
+    {
+      "id": "mens_aroma",
+      "name": "メンズアロマ",
+      "description": "整体でしっかりとコリをほぐし、アロマオイルでリンパと血流を促進する定番ボディコース。",
+      "category": "body",
+      "badges": [
+        "人気No.1"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 80,
+      "durationMinutes": 90,
+      "price": 12000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 90,
+          "price": 12000
+        },
+        {
+          "durationMinutes": 120,
+          "price": 14500
+        },
+        {
+          "durationMinutes": 150,
+          "price": 17000
+        },
+        {
+          "durationMinutes": 180,
+          "price": 20000
+        }
+      ],
+      "defaultPricingIndex": 2,
+      "symptomWeights": {
+        "stiff_shoulders": 14,
+        "lower_back": 12,
+        "back_tension": 13,
+        "cold_poor_circulation": 10,
+        "leg_swelling": 10,
+        "stress_relief": 12,
+        "refresh": 8,
+        "better_sleep": 10,
+        "full_body_fatigue": 13,
+        "eye_strain": 4
+      },
+      "segmentWeights": {
+        "male_20s": 4,
+        "male_30s": 9,
+        "male_40s": 6,
+        "male_50s": 3,
+        "male_60plus": 2
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身"
+      ],
+      "techniques": [
+        "整体",
+        "オイル"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "全身のコリ・疲れ・ストレスを、整体＋オイルでバランスよく整えたい方の本命候補です。"
+    },
+    {
+      "id": "mens_recovery",
+      "name": "メンズリカバリー",
+      "description": "メンズアロマの進化版。整体・オイル・超音波で深部からほぐし、ヘッドセラピーも付く回復系コース。",
+      "category": "recovery",
+      "badges": [
+        "NEW",
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 88,
+      "durationMinutes": 90,
+      "price": 17000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 90,
+          "price": 17000
+        },
+        {
+          "durationMinutes": 120,
+          "price": 19500
+        },
+        {
+          "durationMinutes": 150,
+          "price": 22000
+        },
+        {
+          "durationMinutes": 180,
+          "price": 25000
+        }
+      ],
+      "defaultPricingIndex": 2,
+      "symptomWeights": {
+        "stiff_shoulders": 12,
+        "lower_back": 10,
+        "back_tension": 12,
+        "cold_poor_circulation": 10,
+        "leg_swelling": 10,
+        "stress_relief": 12,
+        "refresh": 8,
+        "better_sleep": 14,
+        "full_body_fatigue": 14,
+        "eye_strain": 14,
+        "vitality_recovery": 16
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 6,
+        "male_40s": 9,
+        "male_50s": 10,
+        "male_60plus": 8
+      },
+      "conditions": [],
+      "bodyParts": [
+        "ヘッド",
+        "全身",
+        "そけい"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "超音波"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "深い疲れ、頭の重さ、活力低下までまとめて立て直したい方に向く上位候補です。"
+    },
+    {
+      "id": "mens_boost",
+      "name": "メンズブースト",
+      "description": "下半身特化で活力と精力アップ、ストレス緩和を狙う限定コース。",
+      "category": "recovery",
+      "badges": [
+        "NEW",
+        "限定"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 49,
+      "displayPriority": 90,
+      "durationMinutes": 60,
+      "price": 12000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 12000
+        },
+        {
+          "durationMinutes": 90,
+          "price": 14500
+        },
+        {
+          "durationMinutes": 120,
+          "price": 17000
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "cold_poor_circulation": 11,
+        "leg_swelling": 10,
+        "stress_relief": 12,
+        "refresh": 7,
+        "better_sleep": 12,
+        "eye_strain": 10,
+        "vitality_recovery": 18
+      },
+      "segmentWeights": {
+        "male_20s": 8,
+        "male_30s": 8,
+        "male_40s": 5
+      },
+      "conditions": [
+        {
+          "type": "ageLTE",
+          "value": 49
+        }
+      ],
+      "bodyParts": [
+        "ヘッド",
+        "下半身",
+        "そけい"
+      ],
+      "techniques": [
+        "整体",
+        "オイル"
+      ],
+      "notes": "49歳以下限定 / 活力ケア重視",
+      "active": true,
+      "conciergePitch": "49歳以下限定。活力・巡り・下半身ケアを重視したい方に特に相性が高いコースです。"
+    },
+    {
+      "id": "slim_intensive_m",
+      "name": "スリム集中ケア",
+      "description": "ウエスト周りなど気になる部分を引き締める、他コースとの組み合わせにも向く集中ケア。",
+      "category": "diet",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 76,
+      "durationMinutes": 60,
+      "price": 12500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 12500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "diet_body": 18,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "male_20s": 4,
+        "male_30s": 5,
+        "male_40s": 4
+      },
+      "conditions": [],
+      "bodyParts": [
+        "上半身"
+      ],
+      "techniques": [
+        "超音波",
+        "痩身"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "お腹まわりや上半身を集中的に引き締めたい方に向いています。"
+    },
+    {
+      "id": "sixpad_course_30_m",
+      "name": "SIX PAD 30",
+      "description": "寝たままでトレーニングできるメディカルグレードのSIXPAD体験コース。",
+      "category": "diet",
+      "badges": [
+        "NEW"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 72,
+      "durationMinutes": 30,
+      "price": 8500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 30,
+          "price": 8500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "diet_body": 16,
+        "vitality_recovery": 8,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "male_20s": 5,
+        "male_30s": 5,
+        "male_40s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "上半身"
+      ],
+      "techniques": [
+        "超音波",
+        "痩身"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "短時間で引き締め感を出したい方、痩身系を試したい方におすすめです。"
+    },
+    {
+      "id": "foot_care_m",
+      "name": "足裏角質ケア",
+      "description": "厚く硬いかかとなどの角質を専用やすりやスクラブでケアし、保湿クリームで仕上げます。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 40,
+      "durationMinutes": 60,
+      "price": 8000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 8000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "leg_swelling": 4,
+        "cold_poor_circulation": 4
+      },
+      "segmentWeights": {
+        "male_20s": 2,
+        "male_30s": 2,
+        "male_40s": 2,
+        "male_50s": 2
+      },
+      "conditions": [],
+      "bodyParts": [
+        "足裏"
+      ],
+      "techniques": [
+        "クリーム"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "足裏の角質や足元の印象が気になる時の単品ケア向けです。"
+    },
+    {
+      "id": "relax_set_m",
+      "name": "リラックスセット",
+      "description": "アロマリフレクソロジーと整体で全身をケアする着衣対応のリラックスコース。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 70,
+      "durationMinutes": 90,
+      "price": 9500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 90,
+          "price": 9500
+        },
+        {
+          "durationMinutes": 120,
+          "price": 11000
+        },
+        {
+          "durationMinutes": 150,
+          "price": 13500
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "stiff_shoulders": 12,
+        "lower_back": 10,
+        "back_tension": 11,
+        "cold_poor_circulation": 9,
+        "leg_swelling": 9,
+        "full_body_fatigue": 11,
+        "stress_relief": 10,
+        "better_sleep": 8
+      },
+      "segmentWeights": {
+        "male_20s": 4,
+        "male_30s": 5,
+        "male_40s": 4,
+        "male_50s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "リフレク"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "まずは受けやすい価格帯で、全身をゆるめて整えたい方におすすめです。"
+    },
+    {
+      "id": "relax_chiropractic_m",
+      "name": "リラックス整体",
+      "description": "痛くない整体で全身をケアし、バランスを整えながらコリをほぐすメンテナンス向けコース。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 66,
+      "durationMinutes": 60,
+      "price": 7000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 7000
+        },
+        {
+          "durationMinutes": 90,
+          "price": 10000
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "stiff_shoulders": 13,
+        "lower_back": 12,
+        "back_tension": 12,
+        "full_body_fatigue": 9
+      },
+      "segmentWeights": {
+        "male_20s": 4,
+        "male_30s": 4,
+        "male_40s": 4,
+        "male_50s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身"
+      ],
+      "techniques": [
+        "整体"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "整体中心で、肩腰まわりをしっかり整えたい方に合いやすいコースです。"
+    },
+    {
+      "id": "reflexology_m",
+      "name": "リフレクソロジー",
+      "description": "足裏を中心にふくらはぎと膝周辺までをオイルでケアする着衣対応コース。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 62,
+      "durationMinutes": 60,
+      "price": 8000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 8000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "leg_swelling": 13,
+        "cold_poor_circulation": 12,
+        "full_body_fatigue": 6
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 3,
+        "male_40s": 3,
+        "male_50s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "足裏"
+      ],
+      "techniques": [
+        "オイル",
+        "リフレク"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "脚の重だるさや冷えが気になる時に相性が高い足元集中ケアです。"
+    },
+    {
+      "id": "mens_max",
+      "name": "メンズマックス",
+      "description": "コリや疲れ、ストレスがマックスな方へ。短時間でも濃密な全部入りのメンテナンス。",
+      "category": "total",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 94,
+      "durationMinutes": 120,
+      "price": 28000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 120,
+          "price": 28000
+        },
+        {
+          "durationMinutes": 150,
+          "price": 30000
+        },
+        {
+          "durationMinutes": 180,
+          "price": 32000
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "stiff_shoulders": 15,
+        "lower_back": 13,
+        "back_tension": 15,
+        "cold_poor_circulation": 11,
+        "leg_swelling": 11,
+        "stress_relief": 12,
+        "refresh": 8,
+        "better_sleep": 12,
+        "full_body_fatigue": 16,
+        "eye_strain": 10,
+        "vitality_recovery": 14,
+        "diet_body": 6
+      },
+      "segmentWeights": {
+        "male_30s": 5,
+        "male_40s": 9,
+        "male_50s": 10,
+        "male_60plus": 9
+      },
+      "conditions": [],
+      "bodyParts": [
+        "ヘッド",
+        "フェイス",
+        "全身",
+        "そけい"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "超音波",
+        "美顔器",
+        "痩身"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "全身疲労が強い方や、しっかり長めに整えたい方のプレミアム本命候補です。"
+    },
+    {
+      "id": "vio_aroma",
+      "name": "VIO脱毛＆アロマ",
+      "description": "VIO脱毛とアロマトリートメントを一度に受けられる、男性向けの脱毛特化コース。",
+      "category": "total",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 92,
+      "durationMinutes": 150,
+      "price": 26500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 150,
+          "price": 26500
+        },
+        {
+          "durationMinutes": 180,
+          "price": 29000
+        },
+        {
+          "durationMinutes": 210,
+          "price": 31500
+        },
+        {
+          "durationMinutes": 240,
+          "price": 34000
+        }
+      ],
+      "defaultPricingIndex": 2,
+      "symptomWeights": {
+        "hair_removal": 22,
+        "stress_relief": 5,
+        "cold_poor_circulation": 4,
+        "full_body_fatigue": 4
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 4,
+        "male_40s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "脱毛"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "脱毛（VIO含む）が気になる方に、最短距離でご案内したい専用候補です。"
+    },
+    {
+      "id": "facial_basic_m",
+      "name": "ベーシックフェイシャル",
+      "description": "毛穴汚れをしっかり落とす基本のスキンケアコース。炭酸ヘッドセラピー付。",
+      "category": "facial",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 86,
+      "durationMinutes": 60,
+      "price": 8500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 8500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "rough_skin": 20,
+        "beauty_care": 8,
+        "eye_strain": 5,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "male_20s": 4,
+        "male_30s": 5,
+        "male_40s": 4,
+        "male_50s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "ヘッド",
+        "フェイス"
+      ],
+      "techniques": [
+        "フェイシャル"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "肌荒れ・毛穴・基本のスキンケアを整えたい方に、まずおすすめしたいフェイスコースです。"
+    },
+    {
+      "id": "facial_special_m",
+      "name": "スペシャルフェイシャル",
+      "description": "シワやたるみを引き締め、美容成分を深部まで届ける美顔コース。炭酸ヘッドセラピー付。",
+      "category": "facial",
+      "badges": [
+        "リピNo.1"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 88,
+      "durationMinutes": 60,
+      "price": 12500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 12500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "rough_skin": 12,
+        "beauty_care": 18,
+        "eye_strain": 6,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 5,
+        "male_40s": 5,
+        "male_50s": 4
+      },
+      "conditions": [],
+      "bodyParts": [
+        "ヘッド",
+        "フェイス"
+      ],
+      "techniques": [
+        "美顔器"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "シワやたるみ、引き締め感を重視したい方に相性の高いフェイシャルです。"
+    },
+    {
+      "id": "facial_royal_m",
+      "name": "ロイヤルフェイシャル",
+      "description": "肌質や悩みにあわせてカスタマイズし、高品質コスメを使う上位フェイシャル。炭酸ヘッドセラピー付。",
+      "category": "facial",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 90,
+      "durationMinutes": 60,
+      "price": 20000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 20000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "rough_skin": 10,
+        "beauty_care": 22,
+        "eye_strain": 6,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "male_30s": 4,
+        "male_40s": 5,
+        "male_50s": 5
+      },
+      "conditions": [],
+      "bodyParts": [
+        "ヘッド",
+        "フェイス"
+      ],
+      "techniques": [
+        "高品質コスメ"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "年齢サインや仕上がり感を重視したい方に向けた上位フェイシャルです。"
+    },
+    {
+      "id": "art_therapy_m",
+      "name": "アートセラピー",
+      "description": "お絵描きや塗り絵感覚で、楽しみながら頭と心を客観的に整理するセラピー。",
+      "category": "mental",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 60,
+      "durationMinutes": 60,
+      "price": 12500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 12500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stress_relief": 14,
+        "better_sleep": 10,
+        "refresh": 8
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 4,
+        "male_40s": 4
+      },
+      "conditions": [],
+      "bodyParts": [],
+      "techniques": [
+        "アート"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "頭を休めたい、気持ちを整理したい時に向くメンタルケアです。"
+    },
+    {
+      "id": "art_craft_m",
+      "name": "アート＆クラフトセラピー",
+      "description": "アートセラピーの要素に癒し効果のあるアロマ等を組み合わせ、バスソルトやミストスプレーを作ります。",
+      "category": "mental",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 62,
+      "durationMinutes": 60,
+      "price": 16000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 16000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stress_relief": 15,
+        "better_sleep": 11,
+        "refresh": 8
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 4,
+        "male_40s": 4
+      },
+      "conditions": [],
+      "bodyParts": [],
+      "techniques": [
+        "アート",
+        "クラフト"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "没頭する時間で気分を切り替えたい方に向くメンタルケアです。"
+    },
+    {
+      "id": "art_relax_set_m",
+      "name": "アート＆リラックスセット",
+      "description": "アートセラピーにリフレクソロジーと整体をセットにした、セルフィールならではのコース。",
+      "category": "mental",
+      "badges": [],
+      "gender": [
+        "male"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 68,
+      "durationMinutes": 180,
+      "price": 23500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 180,
+          "price": 23500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stress_relief": 16,
+        "better_sleep": 14,
+        "refresh": 9,
+        "full_body_fatigue": 8
+      },
+      "segmentWeights": {
+        "male_20s": 3,
+        "male_30s": 4,
+        "male_40s": 4,
+        "male_50s": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "リフレク",
+        "アート"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "心身どちらもほどきたい時に、体と気分転換を一度に叶えやすい組み合わせです。"
+    },
+    {
+      "id": "relax_set_f",
+      "name": "リラックスセット",
+      "description": "アロマリフレクソロジーと整体で全身をケアする、フットバス付の定番リラックスコース。",
+      "category": "body",
+      "badges": [
+        "リピNo.1"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 76,
+      "durationMinutes": 90,
+      "price": 9500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 90,
+          "price": 9500
+        },
+        {
+          "durationMinutes": 120,
+          "price": 11000
+        },
+        {
+          "durationMinutes": 150,
+          "price": 13500
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "stiff_shoulders": 12,
+        "lower_back": 11,
+        "back_tension": 11,
+        "cold_poor_circulation": 10,
+        "leg_swelling": 11,
+        "full_body_fatigue": 12,
+        "stress_relief": 10,
+        "better_sleep": 8,
+        "postpartum_alignment": 10
+      },
+      "segmentWeights": {
+        "female_20s": 5,
+        "female_30s": 7,
+        "female_40s": 6,
+        "female_50s": 4,
+        "female_60plus": 3
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "リフレク"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "全身の疲れ・むくみ・冷えをバランスよく整えたい方に向くベーシック候補です。"
+    },
+    {
+      "id": "relax_chiropractic_f",
+      "name": "リラックス整体",
+      "description": "痛くない整体で全身をケアし、バランスを整えながらコリをほぐすメンテナンス向けコース。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 82,
+      "durationMinutes": 60,
+      "price": 7000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 7000
+        },
+        {
+          "durationMinutes": 90,
+          "price": 10000
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "stiff_shoulders": 13,
+        "lower_back": 13,
+        "back_tension": 12,
+        "full_body_fatigue": 8,
+        "postpartum_alignment": 18
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 5,
+        "female_40s": 5,
+        "female_50s": 4
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身"
+      ],
+      "techniques": [
+        "整体"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "骨盤まわりや姿勢バランス、産後ケアを意識したい方に相性が高い整体系コースです。"
+    },
+    {
+      "id": "reflexology_f",
+      "name": "リフレクソロジー",
+      "description": "足裏を中心にふくらはぎと膝周辺までをオイルでケアする、フットバス付コース。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 70,
+      "durationMinutes": 60,
+      "price": 8000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 8000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "leg_swelling": 14,
+        "cold_poor_circulation": 14,
+        "full_body_fatigue": 6
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 5,
+        "female_40s": 5,
+        "female_50s": 4
+      },
+      "conditions": [],
+      "bodyParts": [
+        "足裏"
+      ],
+      "techniques": [
+        "オイル",
+        "リフレク"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "脚のむくみ・冷えが気になる時の足元集中ケアとしておすすめです。"
+    },
+    {
+      "id": "foot_care_f",
+      "name": "足裏角質ケア",
+      "description": "厚く硬いかかとなどの角質を専用やすりやスクラブでケアし、保湿クリームで仕上げます。",
+      "category": "body",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 42,
+      "durationMinutes": 60,
+      "price": 8000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 8000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "leg_swelling": 4,
+        "cold_poor_circulation": 4
+      },
+      "segmentWeights": {
+        "female_20s": 3,
+        "female_30s": 4,
+        "female_40s": 4
+      },
+      "conditions": [],
+      "bodyParts": [
+        "足裏"
+      ],
+      "techniques": [
+        "クリーム"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "足裏の角質ケアをメインに受けたい方向けの単品メニューです。"
+    },
+    {
+      "id": "sixpad_course_30_f",
+      "name": "SIX PAD 30",
+      "description": "寝たままでトレーニングや骨盤底筋ケアにもつながる、フェムケア対応のSIXPADコース。",
+      "category": "diet",
+      "badges": [
+        "NEW"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 74,
+      "durationMinutes": 30,
+      "price": 8500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 30,
+          "price": 8500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "diet_body": 18,
+        "postpartum_alignment": 7,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "female_20s": 5,
+        "female_30s": 6,
+        "female_40s": 5
+      },
+      "conditions": [],
+      "bodyParts": [
+        "上半身"
+      ],
+      "techniques": [
+        "超音波",
+        "痩身"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "引き締め感を短時間で得たい方、痩身の入口として試したい方に向いています。"
+    },
+    {
+      "id": "cinderella_relax",
+      "name": "シンデレラリラックス",
+      "description": "フェイシャルとリフレクソロジー、整体をまとめた満足度とコスパの高いリピート人気コース。",
+      "category": "total",
+      "badges": [
+        "リピNo.1"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 84,
+      "durationMinutes": 180,
+      "price": 22000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 180,
+          "price": 22000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stiff_shoulders": 12,
+        "lower_back": 10,
+        "back_tension": 11,
+        "cold_poor_circulation": 10,
+        "leg_swelling": 11,
+        "stress_relief": 11,
+        "refresh": 8,
+        "full_body_fatigue": 12,
+        "eye_strain": 6,
+        "rough_skin": 6,
+        "beauty_care": 7
+      },
+      "segmentWeights": {
+        "female_20s": 5,
+        "female_30s": 7,
+        "female_40s": 7,
+        "female_50s": 5
+      },
+      "conditions": [],
+      "bodyParts": [
+        "フェイス",
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "リフレク",
+        "美顔器"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "体の疲れも美容感も両方欲しい時に、満足度を上げやすいトータル候補です。"
+    },
+    {
+      "id": "little_cinderella",
+      "name": "リトルシンデレラ",
+      "description": "シンデレラリラックスの時短上位版。ふくらはぎの超音波ケアなど内容充実のコース。",
+      "category": "total",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 86,
+      "durationMinutes": 120,
+      "price": 24000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 120,
+          "price": 24000
+        },
+        {
+          "durationMinutes": 150,
+          "price": 26000
+        }
+      ],
+      "defaultPricingIndex": 1,
+      "symptomWeights": {
+        "stiff_shoulders": 11,
+        "lower_back": 10,
+        "back_tension": 10,
+        "cold_poor_circulation": 9,
+        "leg_swelling": 10,
+        "stress_relief": 10,
+        "refresh": 8,
+        "full_body_fatigue": 11,
+        "eye_strain": 6,
+        "rough_skin": 7,
+        "beauty_care": 9
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 7,
+        "female_40s": 8,
+        "female_50s": 6
+      },
+      "conditions": [],
+      "bodyParts": [
+        "フェイス",
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "リフレク",
+        "超音波",
+        "美顔器"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "ボディもフェイスもバランスよく入れたい方に向く上位トータルコースです。"
+    },
+    {
+      "id": "mdna_cinderella",
+      "name": "MDNAシンデレラ",
+      "description": "MDNA SKINを使うフェイシャルに、美脚リフレクソロジーと整体を組み合わせたスペシャルセット。",
+      "category": "total",
+      "badges": [
+        "人気No.1"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 90,
+      "durationMinutes": 180,
+      "price": 43000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 180,
+          "price": 43000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stiff_shoulders": 10,
+        "lower_back": 9,
+        "back_tension": 9,
+        "cold_poor_circulation": 8,
+        "leg_swelling": 9,
+        "stress_relief": 9,
+        "refresh": 7,
+        "full_body_fatigue": 10,
+        "eye_strain": 6,
+        "rough_skin": 9,
+        "beauty_care": 16
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 8,
+        "female_40s": 9,
+        "female_50s": 8
+      },
+      "conditions": [],
+      "bodyParts": [
+        "フェイス",
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "オイル",
+        "リフレク",
+        "美顔器"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "エイジングケアまで含めて、仕上がり感を重視したい方に向く上位候補です。"
+    },
+    {
+      "id": "cinderella_facial",
+      "name": "シンデレラフェイシャル",
+      "description": "プラズマ波で美容成分を深部まで届け、EMSと光セラピーでシワやたるみを引き締めます。",
+      "category": "facial",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 88,
+      "durationMinutes": 60,
+      "price": 12500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 12500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "rough_skin": 18,
+        "beauty_care": 12,
+        "eye_strain": 4,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "female_20s": 6,
+        "female_30s": 8,
+        "female_40s": 7,
+        "female_50s": 5
+      },
+      "conditions": [],
+      "bodyParts": [
+        "フェイス"
+      ],
+      "techniques": [
+        "美顔器"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "肌荒れ・毛穴・透明感ケアを整えたい方に、まずおすすめしたいフェイシャルです。"
+    },
+    {
+      "id": "mdna_facial",
+      "name": "MDNAフェイシャル",
+      "description": "シワやたるみを引き締め、美容成分を深部まで届ける上位フェイシャル。炭酸ヘッドセラピー付。",
+      "category": "facial",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 92,
+      "durationMinutes": 60,
+      "price": 20000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 20000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "rough_skin": 12,
+        "beauty_care": 20,
+        "eye_strain": 4,
+        "refresh": 4
+      },
+      "segmentWeights": {
+        "female_20s": 5,
+        "female_30s": 8,
+        "female_40s": 9,
+        "female_50s": 8
+      },
+      "conditions": [],
+      "bodyParts": [
+        "フェイス"
+      ],
+      "techniques": [
+        "美顔器"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "シワ・たるみ・エイジングケアを重視したい方の本命フェイシャルです。"
+    },
+    {
+      "id": "art_therapy_f",
+      "name": "アートセラピー",
+      "description": "お絵描きや塗り絵感覚で、楽しみながら頭と心を客観的に整理するセラピー。",
+      "category": "mental",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 60,
+      "durationMinutes": 60,
+      "price": 12500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 12500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stress_relief": 14,
+        "better_sleep": 10,
+        "refresh": 8
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 5,
+        "female_40s": 5
+      },
+      "conditions": [],
+      "bodyParts": [],
+      "techniques": [
+        "アート"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "頭を休めたい、気持ちを整理したい時に向くメンタルケアです。"
+    },
+    {
+      "id": "art_craft_f",
+      "name": "アート＆クラフトセラピー",
+      "description": "アートセラピーに癒し効果のあるアロマ等を組み合わせ、バスソルトやミストスプレーを作ります。",
+      "category": "mental",
+      "badges": [
+        "おすすめ"
+      ],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 62,
+      "durationMinutes": 60,
+      "price": 16000,
+      "pricingOptions": [
+        {
+          "durationMinutes": 60,
+          "price": 16000
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stress_relief": 15,
+        "better_sleep": 11,
+        "refresh": 8
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 5,
+        "female_40s": 5
+      },
+      "conditions": [],
+      "bodyParts": [],
+      "techniques": [
+        "アート",
+        "クラフト"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "没頭する時間で気分を切り替えたい方に向くメンタルケアです。"
+    },
+    {
+      "id": "art_relax_set_f",
+      "name": "アート＆リラックスセット",
+      "description": "アートセラピーにリフレクソロジーと整体をセットにした、セルフィールならではのコース。",
+      "category": "mental",
+      "badges": [],
+      "gender": [
+        "female"
+      ],
+      "ageMin": 20,
+      "ageMax": 99,
+      "displayPriority": 68,
+      "durationMinutes": 180,
+      "price": 23500,
+      "pricingOptions": [
+        {
+          "durationMinutes": 180,
+          "price": 23500
+        }
+      ],
+      "defaultPricingIndex": 0,
+      "symptomWeights": {
+        "stress_relief": 16,
+        "better_sleep": 14,
+        "refresh": 9,
+        "full_body_fatigue": 8
+      },
+      "segmentWeights": {
+        "female_20s": 4,
+        "female_30s": 5,
+        "female_40s": 5,
+        "female_50s": 4
+      },
+      "conditions": [],
+      "bodyParts": [
+        "全身",
+        "足裏"
+      ],
+      "techniques": [
+        "整体",
+        "リフレク",
+        "アート"
+      ],
+      "notes": "",
+      "active": true,
+      "conciergePitch": "心身どちらもほどきたい時に、体と気分転換を一度に叶えやすい組み合わせです。"
+    }
+  ]
+}

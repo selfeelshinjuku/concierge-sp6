@@ -1,0 +1,249 @@
+{
+  "version": "4.2.0",
+  "note": "公開版。性別に応じて一部症状を出し分けます。",
+  "symptoms": [
+    {
+      "id": "stiff_shoulders",
+      "label": "肩こり・首こり",
+      "aliases": [
+        "肩こり",
+        "首こり"
+      ],
+      "category": "body",
+      "displayOrder": 10,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "lower_back",
+      "label": "腰の張り・腰痛",
+      "aliases": [
+        "腰痛",
+        "腰のハリ"
+      ],
+      "category": "body",
+      "displayOrder": 20,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "full_body_fatigue",
+      "label": "全身の疲れ・だるさ",
+      "aliases": [
+        "全身疲労",
+        "だるさ"
+      ],
+      "category": "body",
+      "displayOrder": 30,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "leg_swelling",
+      "label": "脚のむくみ・重さ",
+      "aliases": [
+        "脚の重さ",
+        "むくみ"
+      ],
+      "category": "body",
+      "displayOrder": 40,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "back_tension",
+      "label": "背中のコリ・張り",
+      "aliases": [
+        "背中のハリ",
+        "背中の重さ"
+      ],
+      "category": "body",
+      "displayOrder": 50,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "stress_relief",
+      "label": "ストレス・気分転換",
+      "aliases": [
+        "ストレス",
+        "リフレッシュ"
+      ],
+      "category": "body",
+      "displayOrder": 60,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "eye_strain",
+      "label": "頭・目の疲れ",
+      "aliases": [
+        "眼精疲労",
+        "頭の重さ",
+        "PC疲れ"
+      ],
+      "category": "body",
+      "displayOrder": 70,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "vitality_recovery",
+      "label": "精力活力",
+      "aliases": [
+        "精力活力",
+        "体力回復"
+      ],
+      "category": "body",
+      "displayOrder": 80,
+      "genders": [
+        "male"
+      ],
+      "active": true
+    },
+    {
+      "id": "rough_skin",
+      "label": "肌荒れ・毛穴・スキンケア",
+      "aliases": [
+        "肌荒れ",
+        "毛穴",
+        "スキンケア"
+      ],
+      "category": "face",
+      "displayOrder": 90,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "refresh",
+      "label": "リフレッシュしたい",
+      "aliases": [
+        "気分転換",
+        "すっきりしたい"
+      ],
+      "category": "body",
+      "displayOrder": 100,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "postpartum_alignment",
+      "label": "産後ケア・骨盤まわり",
+      "aliases": [
+        "産後ケア",
+        "骨盤",
+        "ゆがみ"
+      ],
+      "category": "body",
+      "displayOrder": 110,
+      "genders": [
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "beauty_care",
+      "label": "シワ・たるみ・エイジングケア",
+      "aliases": [
+        "シワ",
+        "たるみ",
+        "エイジングケア"
+      ],
+      "category": "face",
+      "displayOrder": 120,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "diet_body",
+      "label": "痩身・引き締め",
+      "aliases": [
+        "痩身",
+        "引き締め",
+        "ボディメイク"
+      ],
+      "category": "body",
+      "displayOrder": 130,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "cold_poor_circulation",
+      "label": "冷え・血行不良",
+      "aliases": [
+        "冷え",
+        "血行不良"
+      ],
+      "category": "body",
+      "displayOrder": 140,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "better_sleep",
+      "label": "不眠・眠りが浅い",
+      "aliases": [
+        "不眠",
+        "眠りが浅い",
+        "睡眠改善"
+      ],
+      "category": "body",
+      "displayOrder": 150,
+      "genders": [
+        "male",
+        "female"
+      ],
+      "active": true
+    },
+    {
+      "id": "hair_removal",
+      "label": "脱毛（VIO含む）",
+      "aliases": [
+        "脱毛",
+        "VIO"
+      ],
+      "category": "body",
+      "displayOrder": 160,
+      "genders": [
+        "male"
+      ],
+      "active": true
+    }
+  ]
+}

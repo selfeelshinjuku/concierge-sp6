@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>予約コンシェルジュ | concierge-v5 restored</title>
+    <meta
+      name="description"
+      content="concierge-v5 のデザインとミニふじくんを基準に復元した、実装版の予約コンシェルジュです。"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="app-header">
+        <div class="header-avatar-wrap">
+          <img src="./assets/img/minifuji-header.png" alt="ミニふじくん" class="header-avatar" />
+        </div>
+        <div class="header-copy">
+          <h1>予約コンシェルジュ</h1>
+          <p>性別・年代・症状から順番にご案内します</p>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="guide-card intro-card" id="introCard">
+          <div class="guide-row">
+            <img src="./assets/img/minifuji-avatar.png" alt="ミニふじくん" class="guide-avatar" />
+            <div class="guide-bubble">
+              <p class="guide-role">専属コンシェルジュ ミニふじくん</p>
+              <div id="introMessage"></div>
+            </div>
+          </div>
+          <div class="intro-actions">
+            <button id="startButton" class="primary-button">はじめる ＞</button>
+            <button id="resetButtonTop" class="text-button">最初からやり直す</button>
+          </div>
+        </section>
+
+        <section id="wizardSection" class="wizard-section hidden">
+          <div class="guide-card">
+            <div class="guide-row">
+              <img src="./assets/img/minifuji-avatar.png" alt="ミニふじくん" class="guide-avatar" />
+              <div class="guide-bubble">
+                <p class="guide-role">ミニふじくんのご案内</p>
+                <div id="stepMessage"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-panel" id="stepPanel"></div>
+
+          <div class="wizard-actions">
+            <button id="backButton" class="secondary-button">戻る</button>
+            <button id="resetButtonBottom" class="text-button">最初からやり直す</button>
+          </div>
+        </section>
+      </main>
+
+      <aside class="summary-bar">
+        <div id="selectionSummary" class="selection-summary">コースとオプションがここに表示されます</div>
+        <div class="summary-stats">
+          <strong id="totalDuration">0分</strong>
+          <strong id="totalPrice">¥0</strong>
+        </div>
+      </aside>
+    </div>
+
+    <template id="choiceCardTemplate">
+      <button class="choice-card" type="button">
+        <div class="choice-main">
+          <div class="choice-topline">
+            <span class="choice-title"></span>
+            <div class="badge-list"></div>
+          </div>
+          <p class="choice-meta"></p>
+          <p class="choice-desc"></p>
+          <p class="choice-note"></p>
+        </div>
+      </button>
+    </template>
+
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>

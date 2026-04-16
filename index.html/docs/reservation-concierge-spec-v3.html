@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>予約コンシェルジュ 完全改修パッケージ仕様書 v3.0</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      /* Base Overrides for Professional Document Look */
+      body {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0;
+        font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+        line-height: 1.6;
+        box-sizing: border-box;
+      }
+
+      /* Container to wrap content with padding */
+      .doc-container {
+        padding: 0 40px 60px 40px;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #1a1a1a;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        margin-bottom: 1rem;
+      }
+      ul,
+      ol {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+      li {
+        margin-bottom: 0.25rem;
+      }
+
+      /* 12. Cover Page */
+      .cover {
+        background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+        color: #ffffff;
+        padding: 100px 60px;
+        text-align: center;
+        border-bottom: 8px solid #dc2626;
+        margin-bottom: 40px;
+      }
+      .cover h1 {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        border: none;
+      }
+      .cover .subtitle {
+        font-size: 18px;
+        color: #e0e0e0;
+        margin-bottom: 40px;
+      }
+      .cover-meta-table {
+        margin: 0 auto;
+        width: auto;
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+      }
+      .cover-meta-table th,
+      .cover-meta-table td {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px 24px;
+        background: transparent;
+        color: #fff;
+        text-align: left;
+      }
+      .cover-meta-table th {
+        background: rgba(255, 255, 255, 0.1);
+        font-weight: bold;
+      }
+
+      /* 11. Table of Contents (2 columns) */
+      .toc-card {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid #1a1a1a;
+      }
+      .toc-card h3 {
+        font-size: 20px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      .toc-list {
+        list-style: none;
+        padding: 0;
+        column-count: 2;
+        column-gap: 40px;
+      }
+      .toc-list li {
+        margin-bottom: 12px;
+        break-inside: avoid;
+      }
+      .toc-list a {
+        color: #1a1a1a;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+      }
+      .toc-list .toc-num {
+        color: #dc2626;
+        margin-right: 8px;
+        font-family: monospace;
+        font-size: 14px;
+      }
+
+      /* 2 & 3. Section Cards with Black Headers & Number Badges */
+      .section {
+        background: #ffffff;
+        border-radius: 8px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+      .section-header {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+      }
+      .section-header h2 {
+        color: #ffffff;
+        margin: 0;
+        font-size: 22px;
+        border: none;
+      }
+      .section-num {
+        background: #dc2626;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin-right: 15px;
+        font-family: monospace;
+      }
+      .section-body {
+        padding: 30px;
+      }
+      .section-body h3 {
+        font-size: 18px;
+        border-left: 4px solid #1a1a1a;
+        padding-left: 10px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        color: #1a1a1a;
+      }
+      .section-body h4 {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* 4. Step Scenario Cards */
+      .step-card {
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        overflow: hidden;
+      }
+      .step-header {
+        background: #f3f4f6;
+        padding: 12px 20px;
+        font-weight: bold;
+        border-bottom: 1px solid #e5e7eb;
+        color: #1a1a1a;
+      }
+      .step-body {
+        padding: 20px;
+        background: #ffffff;
+      }
+      .bubble-row {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .bubble-row:last-child {
+        margin-bottom: 0;
+      }
+      .avatar {
+        width: 48px;
+        height: 48px;
+        background: #1a1a1a;
+        border-radius: 50%;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+        margin-right: 16px;
+      }
+      .bubble {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        padding: 16px;
+        border-radius: 0 12px 12px 12px;
+        color: #333;
+        font-size: 15px;
+        position: relative;
+        flex-grow: 1;
+      }
+      .bubble strong {
+        color: #dc2626;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .step-options {
+        background: #f9fafb;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 15px;
+        border: 1px dashed #cbd5e1;
+      }
+
+      /* 5. Dark Theme Pre Tags */
+      pre.code-dark {
+        background: #1e1e1e !important;
+        color: #d4d4d4 !important;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        /* Prevent scrollbars */
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+        overflow: visible !important;
+        border: 1px solid #333;
+      }
+      .syntax-key {
+        color: #9cdcfe;
+      }
+      .syntax-str {
+        color: #ce9178;
+      }
+      .syntax-num {
+        color: #b5cea8;
+      }
+      .syntax-bool {
+        color: #569cd6;
+      }
+      .syntax-comment {
+        color: #6a9955;
+        font-style: italic;
+      }
+
+      /* 6. Visual Checklists */
+      .visual-checklist {
+        list-style: none;
+        padding: 0;
+      }
+      .visual-checklist li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        padding: 10px;
+        background: #f8fafc;
+        border-radius: 4px;
+        border-left: 3px solid #cbd5e1;
+      }
+      .check-box {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #64748b;
+        border-radius: 4px;
+        margin-right: 12px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        background: #ffffff;
+      }
+
+      /* 7. Alert Boxes */
+      .alert-red {
+        background-color: #fef2f2;
+        border-left: 4px solid #dc2626;
+        padding: 16px 20px;
+        margin-bottom: 20px;
+        border-radius: 0 6px 6px 0;
+        color: #991b1b;
+      }
+      .alert-yellow {
+        background-color: #fffbeb;
+        border-left: 4px solid #f59e0b;
+        padding: 16px 20px;
+        margin-bottom: 20px;
+        border-radius: 0 6px 6px 0;
+        color: #92400e;
+      }
+      .alert-red strong,
+      .alert-yellow strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+
+      /* 8. Badges */
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #ffffff;
+        border-radius: 12px;
+        margin-right: 6px;
+        line-height: 1;
+      }
+      .badge-new {
+        background-color: #2563eb;
+      }
+      .badge-popular {
+        background-color: #dc2626;
+      }
+      .badge-repeat {
+        background-color: #16a34a;
+      }
+
+      /* 9. Professional Tables */
+      table.pro-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 24px;
+        background: #ffffff;
+      }
+      table.pro-table th,
+      table.pro-table td {
+        border: 1px solid #e2e8f0;
+        padding: 12px 16px;
+        text-align: left;
+      }
+      table.pro-table th {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        font-weight: bold;
+      }
+      table.pro-table tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+
+      /* 10. Numbered List with Badges (Implementation Priority) */
+      .priority-list {
+        list-style: none;
+        padding: 0;
+      }
+      .priority-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 12px 16px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+      }
+      .priority-badge {
+        background: #1a1a1a;
+        color: #ffffff;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 16px;
+        flex-shrink: 0;
+      }
+
+      /* 13. Footer */
+      .doc-footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: #64748b;
+        font-size: 14px;
+        border-top: 1px solid #e2e8f0;
+        margin-top: 40px;
+      }
+
+      /* Inline Code */
+      code.inline {
+        background: #f1f5f9;
+        color: #ef4444;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cover Page -->
+    <div class="cover">
+      <div class="cover-icon">📊</div>
+      <h1>予約コンシェルジュ 完全改修パッケージ仕様書</h1>
+      <div class="subtitle">デザイナー・エンジニア 即時着手版 ／ 旧UI完全復元 ＋ 新機能追加</div>
+      <table class="cover-meta-table">
+        <tr>
+          <th>バージョン</th>
+          <td>v3.0</td>
+        </tr>
+        <tr>
+          <th>作成日</th>
+          <td>2026年4月4日</td>
+        </tr>
+        <tr>
+          <th>ステータス</th>
+          <td>実装指示書（即時着手可能）</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="doc-container">
+      <!-- Table of Contents -->
+      <div class="toc-card">
+        <h3>目次</h3>
+        <ul class="toc-list">
+          <li>
+            <a href="#section-00"><span class="toc-num">00</span>概要・改修目的</a>
+          </li>
+          <li>
+            <a href="#section-01"><span class="toc-num">01</span>UIデザイン修正方針</a>
+          </li>
+          <li>
+            <a href="#section-02"><span class="toc-num">02</span>ミニふじくん案内シナリオ（全ステップ）</a>
+          </li>
+          <li>
+            <a href="#section-03"><span class="toc-num">03</span>コース/オプション表示ロジック</a>
+          </li>
+          <li>
+            <a href="#section-04"><span class="toc-num">04</span>データ設計</a>
+          </li>
+          <li>
+            <a href="#section-05"><span class="toc-num">05</span>時間表示ルール</a>
+          </li>
+          <li>
+            <a href="#section-06"><span class="toc-num">06</span>将来の追加・変更手順</a>
+          </li>
+          <li>
+            <a href="#section-07"><span class="toc-num">07</span>受け入れ基準（QAチェックリスト）</a>
+          </li>
+          <li>
+            <a href="#section-08"><span class="toc-num">08</span>引き継ぎ・実装担当者へのメモ</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 00: 概要・改修目的 -->
+      <div id="section-00" class="section">
+        <div class="section-header">
+          <span class="section-num">00</span>
+          <h2>概要・改修目的</h2>
+        </div>
+        <div class="section-body">
+          <p>旧UIの世界観（ミニふじくん案内型・シナリオ進行型）を完全に復元した上で、以下を新たに追加します。</p>
+          <ul class="visual-checklist" style="margin-bottom: 0">
+            <li>
+              <div class="check-box" style="background: #10b981; border-color: #10b981"></div>
+              コンシェルジュらしい会話トーン・寄り添い案内
+            </li>
+            <li>
+              <div class="check-box" style="background: #10b981; border-color: #10b981"></div>
+              症状・年代・性別によるコース/オプション表示ロジック
+            </li>
+            <li>
+              <div class="check-box" style="background: #10b981; border-color: #10b981"></div>
+              メンズブースト等の限定条件管理
+            </li>
+            <li>
+              <div class="check-box" style="background: #10b981; border-color: #10b981"></div>
+              時間表示の改善（分→時間）
+            </li>
+            <li>
+              <div class="check-box" style="background: #10b981; border-color: #10b981"></div>
+              将来の追加・変更に強いデータ設計
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 01: UIデザイン修正方針 -->
+      <div id="section-01" class="section">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2>UIデザイン修正方針</h2>
+        </div>
+        <div class="section-body">
+          <h3>1-1. デザインコンセプト（旧UIへの回帰 + ブラッシュアップ）</h3>
+
+          <h4>以下の要素を必ず復元すること（旧UIのコア要素）：</h4>
+          <ul>
+            <li>画面上部に「予約コンシェルジュ」タイトル + 「順番に選ぶだけで予約できます」サブテキスト</li>
+            <li>ミニふじくんのキャラクターアイコン（左上または案内エリア左）</li>
+            <li>ミニふじくんの吹き出し型案内テキスト（各ステップで変わる）</li>
+            <li>黒〜濃いグレー基調のヘッダー/フッターデザイン</li>
+            <li>大きく押しやすい「はじめる ▶」ボタン</li>
+            <li>画面下部固定の合計エリア（合計時間・合計金額・現在の選択内容）</li>
+            <li>「最初からやり直す」リンク（下部に小さく）</li>
+            <li>ステップバイステップで順番に進む設計</li>
+          </ul>
+
+          <h4>ブラッシュアップのみ行う点（変えてよい点）：</h4>
+          <ul>
+            <li>選択肢カードを押しやすく（タップ領域拡大）</li>
+            <li>
+              バッジ表示を明確に：
+              <span class="badge badge-new">NEW</span>
+              <span class="badge badge-popular">人気No.1</span>
+              <span class="badge badge-repeat">リピNo.1</span>
+            </li>
+            <li>スマホ余白・文字サイズの視認性向上</li>
+            <li>「戻る」「最初からやり直す」をわかりやすく</li>
+          </ul>
+
+          <div class="alert-red">
+            <strong>変えてはいけない点（旧UIの世界観）：</strong>
+            ・黒〜濃いグレー基調の重厚感<br />
+            ・キャラクター案内型UI<br />
+            ・下部固定の進捗・合計表示
+          </div>
+
+          <h3>1-2. 画面構成（各エリアの仕様）</h3>
+          <table class="pro-table">
+            <tr>
+              <th style="width: 25%">エリア</th>
+              <th>仕様</th>
+            </tr>
+            <tr>
+              <td><strong>ヘッダーエリア</strong></td>
+              <td>
+                背景色：<code class="inline">#1a1a1a</code>（旧UIに合わせた濃い黒）<br />
+                タイトル：「予約コンシェルジュ」（中央配置、白文字、18px）<br />
+                サブテキスト：「順番に選ぶだけで予約できます」（12px、グレー）<br />
+                ミニふじくんアイコン：左端に32px表示
+              </td>
+            </tr>
+            <tr>
+              <td><strong>案内エリア</strong></td>
+              <td>
+                アイコン：ミニふじくん 48px（左）<br />
+                吹き出し：角丸、背景白、左向き<br />
+                テキスト：各ステップで動的に変わる案内文（後述）
+              </td>
+            </tr>
+            <tr>
+              <td><strong>選択肢エリア</strong></td>
+              <td>
+                カードグリッド：1列（スマホ）/ 2列（PC）<br />
+                バッジ：右上角に色付きラベル（NEW=青、人気No.1=赤、リピNo.1=緑）<br />
+                タップ時：背景が変わりチェック表示
+              </td>
+            </tr>
+            <tr>
+              <td><strong>フッターエリア</strong></td>
+              <td>
+                背景：<code class="inline">#111111</code><br />
+                表示内容：合計時間（時間表示）/ 合計金額 / 次のアクション<br />
+                高さ：約64px固定（下部固定）
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 02: ミニふじくん案内シナリオ -->
+      <div id="section-02" class="section">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2>ミニふじくん案内シナリオ（全ステップ）</h2>
+        </div>
+        <div class="section-body">
+          <p>各ステップでの吹き出し文言を完全記載します。</p>
+
+          <!-- STEP 0 -->
+          <div class="step-card">
+            <div class="step-header">STEP 0: スタート画面</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  こんにちは！<br />
+                  専属コンシェルジュのミニふじくんです。<br />
+                  順番に選ぶだけで、あなたにぴったりの<br />
+                  コースをご案内します。
+                </div>
+              </div>
+              <div class="step-options">
+                <strong>ボタン：</strong> 「はじめる ▶」<br />
+                <strong>補足：</strong> 「最初からやり直す」リンク（下部）
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 1 -->
+          <div class="step-card">
+            <div class="step-header">STEP 1: 性別の選択</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  まず、お客様の性別を<br />
+                  教えていただけますか？<br />
+                  ご希望に合ったコースをご提案します。
+                </div>
+              </div>
+              <div class="step-options"><strong>選択肢：</strong> 男性 / 女性</div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-card">
+            <div class="step-header">STEP 2: 年代の選択</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  ありがとうございます。<br />
+                  続いて、年代を教えてください。<br />
+                  より最適なご提案ができます。
+                </div>
+              </div>
+              <div class="step-options"><strong>選択肢：</strong> 20代 / 30代 / 40代 / 50代 / 60代以上</div>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step-card">
+            <div class="step-header">STEP 3: 症状・お悩みの選択（複数選択可）</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  次の項目から、<br />
+                  今のお悩みや症状に近いものを<br />
+                  選んでください。<br />
+                  複数選択もできます。
+                </div>
+              </div>
+              <div class="step-options">
+                <strong>選択肢（全件、シート準拠）：</strong><br />
+                肩こり・首こり / 腰の張り・腰痛 / 全身の疲れ・だるさ / 脚のむくみ・重さ / 背中のコリ・張り /
+                ストレス・気分転換 / 頭痛・眼精疲労 / 活力低下・体力回復 / 肌荒れ・肌ケア / リフレッシュしたい /
+                産後ケア・体のゆがみ / 美肌・美容ケア / ダイエット・ボディケア / 冷え・血行不良 / 睡眠の質を上げたい
+              </div>
+              <h4 style="margin-top: 20px">症状選択後の吹き出し（動的）：</h4>
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  <strong>例1（肩こり・腰痛選択時）：</strong>
+                  肩や腰のコリ・ハリにお悩みなのですね。<br />
+                  それに合いやすいコースをピックアップしてご案内します。
+                </div>
+              </div>
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  <strong>例2（肌荒れ・美容ケア選択時）：</strong>
+                  お肌のお悩みがあるのですね。<br />
+                  フェイシャル系を中心におすすめコースをご案内します。
+                </div>
+              </div>
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  <strong>例3（全身疲れ・活力低下選択時）：</strong>
+                  全身の疲れや活力低下にお悩みなのですね。<br />
+                  回復系のコースを中心にご案内します。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step-card">
+            <div class="step-header">STEP 4: コース選択</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  お悩みや年代に合わせて、<br />
+                  相性のよいコースから順番にご紹介しています。<br />
+                  気になるコースをお選びください。
+                </div>
+              </div>
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  <strong>コース選択後：</strong>
+                  よいコースをお選びいただきましたね。<br />
+                  このコースに合う組み合わせメニューもご紹介できます。<br />
+                  いっしょに見てみますか？
+                </div>
+              </div>
+              <div class="step-options"><strong>ボタン：</strong> 「見てみる ▶」 / 「このまま続ける」</div>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="step-card">
+            <div class="step-header">STEP 5: オプション選択（任意）</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  人気のオプションを追加して、<br />
+                  より自分向けにカスタマイズすることができます。<br />
+                  ご希望があればお選びください。
+                </div>
+              </div>
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  <strong>スキップ時：</strong>
+                  承知しました。それでは次に進みます。
+                </div>
+              </div>
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  <strong>選択時確認：</strong>
+                  では、オプションをご利用いただきますので、希望のものをお選びください。
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 6 -->
+          <div class="step-card">
+            <div class="step-header">STEP 6: 最終確認</div>
+            <div class="step-body">
+              <div class="bubble-row">
+                <div class="avatar">👦</div>
+                <div class="bubble">
+                  ありがとうございます！<br />
+                  いま選んでいただいた内容で予約を進めますか？
+                </div>
+              </div>
+              <div class="step-options">
+                <strong>選択内容サマリー表示エリア（カード形式）：</strong><br />
+                性別 / 年代 / お悩み / コース名・時間・金額 / オプション（あれば） / 合計時間・合計金額
+              </div>
+              <div class="step-options" style="background: #fff; border-color: #e2e8f0; margin-top: 10px">
+                <strong>ボタン：</strong> 「予約内容をコピーしてフォームへ ▶」<br />
+                <strong>補足テキスト：</strong>
+                「クリックすると予約内容をコピーして、予約申し込みフォームに遷移します。」
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 03: コース/オプション表示ロジック -->
+      <div id="section-03" class="section">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2>コース/オプション表示ロジック</h2>
+        </div>
+        <div class="section-body">
+          <h3>3-1. 表示フィルタリング（表示可否の判定）</h3>
+          <p>まず以下の条件で表示するかどうかを判定します：</p>
+          <pre class="code-dark">
+<span class="syntax-comment">// 表示条件判定</span>
+性別チェック：course.gender が <span class="syntax-str">"all"</span> または 選択した性別を含む
+年齢上限チェック：course.ageMax が未設定 または 選択した年代の上限以下
+年齢下限チェック：course.ageMin が未設定 または 選択した年代の下限以上
+        </pre>
+
+          <div class="alert-yellow">
+            <strong>重要な限定条件：</strong>
+            ・メンズブーストは <code class="inline">gender: ["male"]</code>、<code class="inline">ageMax: 49</code
+            ><br />
+            ・50代・60代以上には表示しない<br />
+            ・女性限定コースは male には表示しない<br />
+            ・男性限定コースは female には表示しない
+          </div>
+
+          <h3>3-2. スコアリングと表示順（フィルタ通過後のソート）</h3>
+          <pre class="code-dark"><span class="syntax-comment">// スコア計算式</span>
+totalScore = symptomScore + segmentScore + badgeScore + displayPriority
+        </pre>
+          <ul>
+            <li><strong>symptomScore：</strong>選択した症状と symptomWeights の合計</li>
+            <li><strong>segmentScore：</strong>性別＋年代のキーに対応する segmentWeights の値</li>
+            <li><strong>badgeScore：</strong>NEW=10、人気No.1=8、リピNo.1=6、なし=0</li>
+            <li><strong>displayPriority：</strong>手動設定の優先度（0〜100）</li>
+          </ul>
+          <p><strong>最終ソート順：</strong>totalScore 降順（高いほど上に表示）</p>
+
+          <h3>3-3. 年代・性別出し分けの具体例</h3>
+          <table class="pro-table">
+            <tr>
+              <th>ユーザー属性 / 症状</th>
+              <th>表示優先順位（例）</th>
+              <th>備考</th>
+            </tr>
+            <tr>
+              <td><strong>30代男性</strong> × 肩こり・腰痛</td>
+              <td>1. メンズアロマ<br />2. メンズリラックス<br />3. スウェディッシュ</td>
+              <td>中価格帯のsegmentWeightsが高い。<br />※メンズブーストは表示あり。</td>
+            </tr>
+            <tr>
+              <td><strong>40代男性</strong> × 肩こり・腰痛</td>
+              <td>1. メンズリカバリー<br />2. メンズマックス<br />3. メンズアロマ</td>
+              <td>※メンズブーストは表示あり。</td>
+            </tr>
+            <tr>
+              <td><strong>50代男性</strong> × 肩こり・腰痛</td>
+              <td>1. メンズリカバリー<br />2. メンズマックス<br />3. スウェディッシュ</td>
+              <td><strong>※メンズブーストは非表示</strong>（50代以上）</td>
+            </tr>
+            <tr>
+              <td><strong>女性</strong> × 肌荒れ・美容ケア</td>
+              <td>1. フェイシャルスタンダード<br />2. フェイシャルプレミアム<br />3. アロマトリートメント</td>
+              <td>フェイシャル系を優先表示</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 04: データ設計 -->
+      <div id="section-04" class="section">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2>データ設計</h2>
+        </div>
+        <div class="section-body">
+          <h3>4-1. コースデータ構造（JSON）</h3>
+          <p>全コース・全オプションをこの構造で管理します：</p>
+          <pre class="code-dark">
+{
+  <span class="syntax-key">"courses"</span>: [
+    {
+      <span class="syntax-key">"id"</span>: <span class="syntax-str">"mens-aroma"</span>,
+      <span class="syntax-key">"name"</span>: <span class="syntax-str">"メンズアロマ"</span>,
+      <span class="syntax-key">"description"</span>: <span class="syntax-str">"アロマオイルで全身をほぐすリラクゼーションコース"</span>,
+      <span class="syntax-key">"duration"</span>: <span class="syntax-num">60</span>,
+      <span class="syntax-key">"price"</span>: <span class="syntax-num">8800</span>,
+      <span class="syntax-key">"category"</span>: <span class="syntax-str">"mens"</span>,
+      <span class="syntax-key">"badges"</span>: [<span class="syntax-str">"人気No.1"</span>],
+      <span class="syntax-key">"gender"</span>: [<span class="syntax-str">"male"</span>],
+      <span class="syntax-key">"ageMin"</span>: <span class="syntax-bool">null</span>,
+      <span class="syntax-key">"ageMax"</span>: <span class="syntax-bool">null</span>,
+      <span class="syntax-key">"symptomWeights"</span>: {
+        <span class="syntax-key">"肩こり・首こり"</span>: <span class="syntax-num">4</span>,
+        <span class="syntax-key">"全身の疲れ・だるさ"</span>: <span class="syntax-num">5</span>,
+        <span class="syntax-key">"ストレス・気分転換"</span>: <span class="syntax-num">4</span>
+      },
+      <span class="syntax-key">"segmentWeights"</span>: {
+        <span class="syntax-key">"male_20s"</span>: <span class="syntax-num">3</span>,
+        <span class="syntax-key">"male_30s"</span>: <span class="syntax-num">5</span>,
+        <span class="syntax-key">"male_40s"</span>: <span class="syntax-num">3</span>,
+        <span class="syntax-key">"male_50s"</span>: <span class="syntax-num">2</span>,
+        <span class="syntax-key">"male_60plus"</span>: <span class="syntax-num">1</span>
+      },
+      <span class="syntax-key">"displayPriority"</span>: <span class="syntax-num">70</span>,
+      <span class="syntax-key">"isActive"</span>: <span class="syntax-bool">true</span>,
+      <span class="syntax-key">"notes"</span>: <span class="syntax-str">""</span>
+    },
+    {
+      <span class="syntax-key">"id"</span>: <span class="syntax-str">"mens-boost"</span>,
+      <span class="syntax-key">"name"</span>: <span class="syntax-str">"メンズブースト"</span>,
+      <span class="syntax-key">"description"</span>: <span class="syntax-str">"活力・体力回復に特化した集中ケアコース"</span>,
+      <span class="syntax-key">"duration"</span>: <span class="syntax-num">90</span>,
+      <span class="syntax-key">"price"</span>: <span class="syntax-num">12000</span>,
+      <span class="syntax-key">"category"</span>: <span class="syntax-str">"mens"</span>,
+      <span class="syntax-key">"badges"</span>: [<span class="syntax-str">"NEW"</span>],
+      <span class="syntax-key">"gender"</span>: [<span class="syntax-str">"male"</span>],
+      <span class="syntax-key">"ageMin"</span>: <span class="syntax-num">20</span>,
+      <span class="syntax-key">"ageMax"</span>: <span class="syntax-num">49</span>, <span class="syntax-comment">// 49歳以下限定</span>
+      <span class="syntax-key">"symptomWeights"</span>: {
+        <span class="syntax-key">"活力低下・体力回復"</span>: <span class="syntax-num">6</span>,
+        <span class="syntax-key">"全身の疲れ・だるさ"</span>: <span class="syntax-num">5</span>
+      },
+      <span class="syntax-key">"segmentWeights"</span>: {
+        <span class="syntax-key">"male_20s"</span>: <span class="syntax-num">5</span>,
+        <span class="syntax-key">"male_30s"</span>: <span class="syntax-num">4</span>,
+        <span class="syntax-key">"male_40s"</span>: <span class="syntax-num">3</span>
+      },
+      <span class="syntax-key">"displayPriority"</span>: <span class="syntax-num">65</span>,
+      <span class="syntax-key">"isActive"</span>: <span class="syntax-bool">true</span>,
+      <span class="syntax-key">"notes"</span>: <span class="syntax-str">"49歳以下限定。50代・60代以上には表示しないこと。"</span>
+    }
+  ]
+}
+        </pre>
+
+          <h3>4-2. オプションデータ構造（JSON）</h3>
+          <pre class="code-dark">
+{
+  <span class="syntax-key">"options"</span>: [
+    {
+      <span class="syntax-key">"id"</span>: <span class="syntax-str">"hot-stone"</span>,
+      <span class="syntax-key">"name"</span>: <span class="syntax-str">"ホットストーン"</span>,
+      <span class="syntax-key">"description"</span>: <span class="syntax-str">"温めたストーンで深部からほぐします"</span>,
+      <span class="syntax-key">"duration"</span>: <span class="syntax-num">20</span>,
+      <span class="syntax-key">"price"</span>: <span class="syntax-num">2200</span>,
+      <span class="syntax-key">"gender"</span>: [<span class="syntax-str">"all"</span>],
+      <span class="syntax-key">"ageMin"</span>: <span class="syntax-bool">null</span>,
+      <span class="syntax-key">"ageMax"</span>: <span class="syntax-bool">null</span>,
+      <span class="syntax-key">"compatibleCourses"</span>: [<span class="syntax-str">"mens-aroma"</span>, <span class="syntax-str">"mens-recovery"</span>, <span class="syntax-str">"mens-max"</span>],
+      <span class="syntax-key">"badges"</span>: [<span class="syntax-str">"人気No.1"</span>],
+      <span class="syntax-key">"symptomWeights"</span>: {
+        <span class="syntax-key">"肩こり・首こり"</span>: <span class="syntax-num">5</span>,
+        <span class="syntax-key">"腰の張り・腰痛"</span>: <span class="syntax-num">5</span>,
+        <span class="syntax-key">"冷え・血行不良"</span>: <span class="syntax-num">4</span>
+      },
+      <span class="syntax-key">"displayPriority"</span>: <span class="syntax-num">80</span>,
+      <span class="syntax-key">"isActive"</span>: <span class="syntax-bool">true</span>
+    }
+  ]
+}
+        </pre>
+
+          <h3>4-3. ユーザー属性データ構造</h3>
+          <pre class="code-dark">
+{
+  <span class="syntax-key">"userProfile"</span>: {
+    <span class="syntax-key">"gender"</span>: <span class="syntax-str">"male"</span>,
+    <span class="syntax-key">"ageGroup"</span>: <span class="syntax-str">"30s"</span>,
+    <span class="syntax-key">"ageGroupLabel"</span>: <span class="syntax-str">"30代"</span>,
+    <span class="syntax-key">"ageRangeMin"</span>: <span class="syntax-num">30</span>,
+    <span class="syntax-key">"ageRangeMax"</span>: <span class="syntax-num">39</span>,
+    <span class="syntax-key">"selectedSymptoms"</span>: [<span class="syntax-str">"肩こり・首こり"</span>, <span class="syntax-str">"全身の疲れ・だるさ"</span>]
+  }
+}
+        </pre>
+        </div>
+      </div>
+
+      <!-- Section 05: 時間表示ルール -->
+      <div id="section-05" class="section">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2>時間表示ルール</h2>
+        </div>
+        <div class="section-body">
+          <p>分から時間への変換関数仕様：</p>
+          <pre class="code-dark">
+<span class="syntax-key">function</span> formatDuration(minutes) {
+  <span class="syntax-bool">if</span> (minutes &lt; <span class="syntax-num">60</span>) {
+    <span class="syntax-bool">return</span> minutes + <span class="syntax-str">"分"</span>;
+  }
+  <span class="syntax-key">let</span> hours = Math.floor(minutes / <span class="syntax-num">60</span>);
+  <span class="syntax-key">let</span> remainder = minutes % <span class="syntax-num">60</span>;
+  
+  <span class="syntax-bool">if</span> (remainder === <span class="syntax-num">0</span>) {
+    <span class="syntax-bool">return</span> hours + <span class="syntax-str">"時間"</span>;
+  } <span class="syntax-bool">else</span> {
+    <span class="syntax-bool">return</span> hours + <span class="syntax-str">"時間"</span> + remainder + <span class="syntax-str">"分"</span>;
+  }
+}
+        </pre>
+
+          <table class="pro-table">
+            <tr>
+              <th style="width: 50%">データ値（分）</th>
+              <th>画面表示</th>
+            </tr>
+            <tr>
+              <td>30分</td>
+              <td><strong>30分</strong></td>
+            </tr>
+            <tr>
+              <td>60分</td>
+              <td><strong>1時間</strong></td>
+            </tr>
+            <tr>
+              <td>90分</td>
+              <td><strong>1時間30分</strong></td>
+            </tr>
+            <tr>
+              <td>120分</td>
+              <td><strong>2時間</strong></td>
+            </tr>
+            <tr>
+              <td>150分</td>
+              <td><strong>2時間30分</strong></td>
+            </tr>
+            <tr>
+              <td>180分</td>
+              <td><strong>3時間</strong></td>
+            </tr>
+            <tr>
+              <td>210分</td>
+              <td><strong>3時間30分</strong></td>
+            </tr>
+            <tr>
+              <td>240分</td>
+              <td><strong>4時間</strong></td>
+            </tr>
+          </table>
+
+          <h4>適用箇所：</h4>
+          <ul>
+            <li>各コースカードの時間表示</li>
+            <li>各オプションの追加時間表示</li>
+            <li>下部固定フッターの合計時間</li>
+            <li>最終確認サマリー画面の合計時間</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 06: 将来の追加・変更手順 -->
+      <div id="section-06" class="section">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2>将来の追加・変更手順</h2>
+        </div>
+        <div class="section-body">
+          <h3>6-1. 新コースを追加する手順</h3>
+          <ol class="priority-list">
+            <li>
+              <div class="priority-badge">1</div>
+              courses 配列に新しいオブジェクトを追加する
+            </li>
+            <li>
+              <div class="priority-badge">2</div>
+              id（一意のID）、name、duration、price を設定する
+            </li>
+            <li>
+              <div class="priority-badge">3</div>
+              gender（all / male / female）を設定する
+            </li>
+            <li>
+              <div class="priority-badge">4</div>
+              ageMin / ageMax で年齢制限を設定する（制限なしはnull）
+            </li>
+            <li>
+              <div class="priority-badge">5</div>
+              symptomWeights に関連症状とスコアを設定する
+            </li>
+            <li>
+              <div class="priority-badge">6</div>
+              segmentWeights に年代ごとのスコアを設定する
+            </li>
+            <li>
+              <div class="priority-badge">7</div>
+              badges を設定する（NEW / 人気No.1 / リピNo.1 / なし）
+            </li>
+            <li>
+              <div class="priority-badge">8</div>
+              displayPriority を 0〜100 で設定する（高いほど優先）
+            </li>
+            <li>
+              <div class="priority-badge">9</div>
+              isActive を true にする
+            </li>
+          </ol>
+
+          <div class="alert-yellow">
+            <strong>6-2. 限定条件の設定例：</strong>
+            ・49歳以下限定：<code class="inline">ageMax: 49</code><br />
+            ・50代以上限定：<code class="inline">ageMin: 50</code><br />
+            ・男性限定：<code class="inline">gender: ["male"]</code><br />
+            ・女性限定：<code class="inline">gender: ["female"]</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 07: 受け入れ基準 -->
+      <div id="section-07" class="section">
+        <div class="section-header">
+          <span class="section-num">07</span>
+          <h2>受け入れ基準（QAチェックリスト）</h2>
+        </div>
+        <div class="section-body">
+          <h4>デザイン関連</h4>
+          <ul class="visual-checklist">
+            <li>
+              <div class="check-box"></div>
+              ミニふじくんアイコンが全ステップで表示されている
+            </li>
+            <li>
+              <div class="check-box"></div>
+              ヘッダーが濃いグレー/黒基調になっている
+            </li>
+            <li>
+              <div class="check-box"></div>
+              下部固定フッターが全ステップで表示されている
+            </li>
+            <li>
+              <div class="check-box"></div>
+              バッジ（NEW/人気No.1/リピNo.1）が視覚的に確認できる
+            </li>
+          </ul>
+
+          <h4>案内シナリオ関連</h4>
+          <ul class="visual-checklist">
+            <li>
+              <div class="check-box"></div>
+              スタート画面でミニふじくんの挨拶が表示される
+            </li>
+            <li>
+              <div class="check-box"></div>
+              各ステップで吹き出し案内文が動的に変わる
+            </li>
+            <li>
+              <div class="check-box"></div>
+              症状選択後に共感コメントが表示される
+            </li>
+          </ul>
+
+          <h4>表示ロジック関連</h4>
+          <ul class="visual-checklist">
+            <li>
+              <div class="check-box"></div>
+              メンズブーストが50代以上に表示されない
+            </li>
+            <li>
+              <div class="check-box"></div>
+              メンズブーストが49歳以下に表示される
+            </li>
+          </ul>
+
+          <h4>時間表示関連</h4>
+          <ul class="visual-checklist">
+            <li>
+              <div class="check-box"></div>
+              90分が「1時間30分」と表示される
+            </li>
+            <li>
+              <div class="check-box"></div>
+              240分が「4時間」と表示される
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 08: 引き継ぎ・実装担当者へのメモ -->
+      <div id="section-08" class="section">
+        <div class="section-header">
+          <span class="section-num">08</span>
+          <h2>引き継ぎ・実装担当者へのメモ</h2>
+        </div>
+        <div class="section-body">
+          <div class="alert-red">
+            <strong>重要な変更禁止事項：</strong>
+            ・ミニふじくんのキャラクター性・案内トーンは変えないこと<br />
+            ・黒/濃いグレー基調のヘッダー・フッターは変えないこと<br />
+            ・下部固定の合計エリアは削除しないこと<br />
+            ・ステップバイステップの進行設計は維持すること
+          </div>
+
+          <h4>実装優先順位：</h4>
+          <ol class="priority-list">
+            <li>
+              <div class="priority-badge">1</div>
+              旧UIデザインの復元（ミニふじくん・ヘッダー・フッター）
+            </li>
+            <li>
+              <div class="priority-badge">2</div>
+              全ステップの案内シナリオ文言実装
+            </li>
+            <li>
+              <div class="priority-badge">3</div>
+              コース/オプションの表示フィルタリングロジック
+            </li>
+            <li>
+              <div class="priority-badge">4</div>
+              スコアリング・ソートロジック
+            </li>
+            <li>
+              <div class="priority-badge">5</div>
+              時間表示の変換
+            </li>
+            <li>
+              <div class="priority-badge">6</div>
+              QAチェックリストによる検証
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="doc-footer">予約コンシェルジュ 完全改修パッケージ仕様書 v3.0 &copy; 2026. All rights reserved.</div>
+    </div>
+    <!-- /.doc-container -->
+  </body>
+</html>
