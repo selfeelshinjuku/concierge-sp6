@@ -1,3 +1,3 @@
 export const APP_CONFIG = {
-  reservationFormUrl: 'https://ws.formzu.net/dist/S967546633/',
+  reservationFormUrl: 'https://script.google.com/macros/s/（ここに完動版GASのID）/exec',
 };
